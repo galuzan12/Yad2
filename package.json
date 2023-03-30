@@ -1,0 +1,19 @@
+{
+  "name": "yad2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:frontend": "yarn workspace frontend build",
+    "start:frontend": "yarn workspace frontend start",
+    "start:backend": "yarn workspace backend dev",
+    "start:all": "concurrently --kill-others-on-fail \"yarn start:frontend\" \"yarn start:backend\""
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
