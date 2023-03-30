@@ -15,7 +15,6 @@ const messageSchema = new mongoose.Schema<IMessageDoc, IMessageModel>(
     sender: {
       type: String,
       required: true
-      //   index: true
     },
     roomName: {
       type: String,
@@ -32,9 +31,9 @@ const messageSchema = new mongoose.Schema<IMessageDoc, IMessageModel>(
   }
 );
 
-const Token = mongoose.model<IMessageDoc, IMessageModel>(
+const Message = mongoose.model<IMessageDoc, IMessageModel>(
   'Message',
   messageSchema
 );
 
-export default Token;
+export default Message;

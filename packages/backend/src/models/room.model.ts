@@ -21,6 +21,6 @@ const roomSchema = new mongoose.Schema<IRoomDoc, IRoomModel>(
   }
 );
 
-const Token = mongoose.model<IRoomDoc, IRoomModel>('Room', roomSchema);
+const Room = mongoose.model<IRoomDoc, IRoomModel>('Room', roomSchema);
 
-export default Token;
+export default Room;
