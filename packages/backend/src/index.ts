@@ -1,5 +1,5 @@
 import express, {Express, Request, Response} from 'express';
-import {PORT} from './config/envs';
+import {DB_URL, PORT} from './config/envs';
 import roomRouter from './routes/room.route';
 import messageRouter from './routes/message.route';
 const app: Express = express();
@@ -17,13 +17,13 @@ app.use('/api/rooms', roomRouter);
 app.use('/api/messages', messageRouter);
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Express + TypeScript Server');
+  res.send('YAD2 Server');
 });
 
 const server = http.createServer(app);
 
 mongoose
-  .connect('mongodb://127.0.0.1:27017/yad2')
+  .connect(DB_URL)
   .then(() => {
     const io = socketIoInit(server, {cors: {origin: '*'}});
     socketIoHandlers(io);
