@@ -8,10 +8,6 @@ Yarn is required
 2. Install modules: `yarn install`
 3. Start up the server: `yarn start:all`
 
-## Notes
-
-1. I changed the server port to 5000
-
 ## Available Scripts
 
 In the project directory, you can run:
